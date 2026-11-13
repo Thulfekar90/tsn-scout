@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tsnscout"
+version = "0.1.0"
+description = "Predict-then-verify: a learned surrogate that guides routing search for IEEE 802.1Qbv schedule synthesis, with every answer checked by an exact solver."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.24",
+    "ortools>=9.8",
+    "scipy>=1.10",
+    "torch>=2.0",
+    "scikit-learn>=1.3",
+    "matplotlib>=3.7",
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+tsnscout = "tsnscout.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

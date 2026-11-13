@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.DS_Store
+# Labelled data is large and fully reproducible: python scripts/make_dataset.py --split <name>
+data/*.jsonl
+data/*.log
+# Private study notes
+GUIDE_AR.md
+results/*.log
